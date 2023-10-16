@@ -1,9 +1,8 @@
 package day6grupÇalışması;
 
-import java.util.Objects;
 import java.util.Scanner;
 
-public class c0_2soruPractice2 {
+public class c02soruPractice2 {
     public static void main(String[] args) {
         // kullanıcıdan bir harf isteyin kullanıcı a yazarsa aile,
         // i yazarsa İş yazdırın. bu harflerın dısında bir harf girerse "bu harfi tanımıyorum yazdırın

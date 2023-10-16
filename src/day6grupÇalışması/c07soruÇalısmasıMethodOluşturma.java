@@ -2,7 +2,7 @@ package day6grupÇalışması;
 
 import java.util.Scanner;
 
-public class c07_soruÇalısmasıMethodOluşturma {
+public class c07soruÇalısmasıMethodOluşturma {
     // Soru 4-kullanıcıdan 2 tane char isteyin ve bunu methoda argument olarak yazıp
     // method içerisinde 2 char'ın değerini toplayıp konsola yazdırın.
     public static void main(String[] args) {

@@ -2,7 +2,7 @@ package day6grupÇalışması;
 
 import java.util.Scanner;
 
-public class c01_soruPractice1 {
+public class c01soruPractice1 {
     public static void main(String[] args) {
 
         Scanner scanner=new Scanner(System.in);
