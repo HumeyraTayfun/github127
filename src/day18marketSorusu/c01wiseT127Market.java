@@ -1,5 +1,6 @@
 package day18marketSorusu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class c01wiseT127Market {
@@ -21,6 +22,8 @@ public class c01wiseT127Market {
     static double toplam;
     static String sepet="";
     static boolean ekÜrün= false;
+    static String fis ="";
+
 
     public static void main(String[] args) {
 
@@ -112,18 +115,179 @@ public class c01wiseT127Market {
     }
 
     private static void şarküteri() {
-        System.out.println("şarküteri reyonuna hoşgeldiniz");
+        System.out.println("Şarküteri Reyonuna Hoşgeldiniz\n" +
+                "Lütfen Satın Almak İstediğiniz Ürünün Kodunu Giriniz\n" +
+                "\n" +
+                "Ürün Kodu : 21 - Kıyma Fiyatı : 250 ₺\n" +
+                "Ürün Kodu : 22 - Peynir Fiyatı : 200 ₺\n" +
+                "Ürün Kodu : 23 - Süt Fiyatı : 25 ₺\n" +
+                "Ürün Kodu : 24 - Yumurta Fiyatı : 90 ₺\n" +
+                "Ürün Kodu : 25 - Yoğurt Fiyatı : 30 ₺\n" +
+                "\n" +
+                "Ana Menüye Dönmek İçin 0(sıfır)'a basınız");
+        System.out.print("Seçiminiz : ");
+
+        while (!ekÜrün){
+            try {
+                ürünKodu= scanner.nextInt();
+
+                if (ürünKodu >= 21 && ürünKodu <= 25){
+                    System.out.println("Kaç kg/lt/koli almak istersiniz?");
+
+                    ürünMiktarı=scanner.nextInt();
+                    switch (ürünKodu){
+                        case 21 :
+                           ürünAdı="Kıyma";
+                          ürünFiyatı=250;
+                            System.out.println(ürünMiktarı + "kg " +ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 22 :
+                            ürünAdı="Peynir";
+                            ürünFiyatı=200;
+                            System.out.println(ürünMiktarı + "kg " + ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 23 :
+                            ürünAdı="Süt";
+                           ürünFiyatı=25;
+                            System.out.println(ürünMiktarı + "lt " + ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 24 :
+                         ürünAdı="Yumurta";
+                         ürünFiyatı=90;
+                            System.out.println(ürünMiktarı + "koli " +ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 25 :
+                            ürünAdı="Yoğurt";
+                            ürünFiyatı=30;
+                            System.out.println(ürünMiktarı + "kg " + ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                    }
+                    ürünFiyatı=ürünFiyatı*ürünMiktarı;
+                    toplam+=ürünFiyatı;
+                    System.out.println("Toplam Sepet Tutarı : " + toplam);
+                    sepet+=ürünAdı+" fiyatı : "+ürünFiyatı+" ₺";
+                    fis+=ürünMiktarı+" "+ürünAdı+" "+ürünFiyatı + " " + "\n";
+                    System.out.println("Başka ürün almak isterseniz lütfen kodunu giriniz.\n" +
+                            "Ana Menüye Dönmek İçin 0(sıfır)'a basınız");
+                }else if (ürünKodu==0){
+                    girişEkranı();
+                }else {
+                    System.out.println("Hatalı Giriş Yaptınız, Lütfen Tekrar Deneyin");
+                    System.out.print("Seçiminiz : ");
+                    scanner.nextLine();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Hatalı giriş yaptınız, lütfen tekrar deneyin.+++");
+                scanner.next();
+                şarküteri();
+            }
+        }
     }
 
     private static void market() {
-        System.out.println("Market reyonuna hoşgeldiniz");
+        System.out.println("Market Reyonuna Hoşgeldiniz\n" +
+                "Lütfen Satın Almak İstediğiniz Ürünün Kodunu Giriniz\n" +
+                "\n" +
+                "Ürün Kodu : 31 - Cips Fiyatı : 25 ₺\n" +
+                "Ürün Kodu : 32 - Kola Fiyatı : 45 ₺\n" +
+                "Ürün Kodu : 33 - Ayçiçek Yağı : 200 ₺\n" +
+                "Ürün Kodu : 34 - Tuvalet Kağıdı Fiyatı : 150 ₺\n" +
+                "Ürün Kodu : 35 - Deterjan Fiyatı : 130 ₺\n" +
+                "\n" +
+                "Ana Menüye Dönmek İçin 0(sıfır)'a basınız");
+        System.out.print("Seçiminiz : ");
+
+        while (!ekÜrün){
+            try {
+                ürünKodu = scanner.nextInt();
+
+                if (ürünKodu >= 31 && ürünKodu <= 35){
+                    System.out.println("Kaç kg/lt/koli almak istersiniz?");
+
+                    ürünMiktarı=scanner.nextInt();
+                    switch (ürünKodu){
+                        case 31 :
+                            ürünAdı="Cips";
+                            ürünFiyatı=25;
+                            System.out.println(ürünMiktarı + "paket " + ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 32 :
+                            ürünAdı="Kola";
+                           ürünFiyatı=45;
+                            System.out.println(ürünMiktarı + "adet " + ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 33 :
+                           ürünAdı="Ayçiçek Yağı";
+                            ürünFiyatı=200;
+                            System.out.println(ürünMiktarı + "lt " + ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 34 :
+                            ürünAdı="Tuvalet Kağıdı";
+                            ürünFiyatı=150;
+                            System.out.println(ürünMiktarı+ "koli " +ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                        case 35 :
+                            ürünAdı="Deterjan";
+                            ürünFiyatı=130;
+                            System.out.println(ürünMiktarı + "kg " + ürünAdı + " Fiyatı : " + ürünFiyatı*ürünMiktarı + "₺");
+                            break;
+                    }
+                    ürünFiyatı=ürünFiyatı*ürünMiktarı;
+                    toplam+=ürünFiyatı;
+                    System.out.println("Toplam Sepet Tutarı : " + toplam);
+                    sepet+=ürünAdı+" fiyatı : "+ürünFiyatı+" ₺";
+                    fis+=ürünMiktarı+" "+ürünAdı+" "+ürünFiyatı + " " + "\n";
+                    System.out.println("Başka ürün almak isterseniz lütfen kodunu giriniz.\n" +
+                            "Ana Menüye Dönmek İçin 0(sıfır)'a basınız");
+                }else if (ürünKodu==0){
+                   girişEkranı();
+                }else {
+                    System.out.println("Hatalı Giriş Yaptınız, Lütfen Tekrar Deneyin");
+                    System.out.print("Seçiminiz : ");
+                    scanner.nextLine();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Hatalı giriş yaptınız, lütfen tekrar deneyin.+++");
+                scanner.next();
+                market();
+            }
+        }
     }
 
     private static void fişyazdır() {
-        System.out.println("fiş yazdırılıyor");
+        System.out.println( System.out.println("Fişiniz : \n" +
+                fis+" \n" +
+                "Toplam Tutar : "+ toplam + "₺\n" +
+                " \n" +
+                "Bizi Tercih Ettiğiniz İçin Teşekkür Ederiz!");
+
+        String fiscikis = "Ana Menüye Dönmek İçin 0(sıfır)'a Basınız\n" +
+                "Çıkmak İçin 1'e Basınız";
+        System.out.println(fiscikis);
+
+        while (true) {
+            System.out.print("Seçiminiz : ");
+            try {
+                int secim = scanner.nextInt();
+                if (secim == 0) {
+                    girişEkranı();
+                    break;
+                } else if (secim == 1) {
+                    çıkış();
+                    break;
+                } else {
+                    System.out.println("Hatalı Giriş Yaptınız, Lütfen Tekrar Deneyin");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Hatalı Giriş Yaptınız, Lütfen Tekrar Deneyin");
+                scanner.next();
+            }
+        }
     }
 
+
     private static void çıkış() {
+        System.exit(0);
         System.out.println("Çıkış yapılıyor");
     }
 
