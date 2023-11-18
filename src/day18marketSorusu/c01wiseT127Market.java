@@ -255,11 +255,10 @@ public class c01wiseT127Market {
     }
 
     private static void fişyazdır() {
-        System.out.println( System.out.println("Fişiniz : \n" +
+        System.out.println("Fişiniz : \n" +
                 fis+" \n" +
                 "Toplam Tutar : "+ toplam + "₺\n" +
-                " \n" +
-                "Bizi Tercih Ettiğiniz İçin Teşekkür Ederiz!");
+                " \n" + "Bizi Tercih Ettiğiniz İçin Teşekkür Ederiz!");
 
         String fiscikis = "Ana Menüye Dönmek İçin 0(sıfır)'a Basınız\n" +
                 "Çıkmak İçin 1'e Basınız";
